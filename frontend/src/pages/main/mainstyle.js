@@ -83,6 +83,7 @@ export const DeleteButton = styled.button`
 
 export const Input = styled.input`
   width: 80%;
+  font-size: 15px;
   padding: 5px;
   margin-top: 10px;
 
@@ -93,6 +94,9 @@ export const Input = styled.input`
 export const Select=styled.select`
   padding: 5px;
   margin-top: 10px;
+  font-size: 15px;
+  margin-right: 20px;
+
   @media (max-width: 600px) {
     width: 20%;
   }
@@ -116,13 +120,14 @@ export const BtnWrapper=styled.div`
 export const BtnWrapper2=styled.div`
   @media (max-width: 600px) {
     display: flex;
-    justify-content: space-between;
   }
 `
 
 export const CategorySelect = styled.select`
   margin-top: 10px;
   padding: 5px;
+  font-size: 15px;
+
 
   @media (max-width: 600px) {
     width: 20%;
@@ -191,6 +196,7 @@ export const SaveMemoButton = styled.button`
 export const Logo = styled.img`
   width: 350px;
   margin-top: 20px;
+  margin-bottom: -10px;
 
   @media (max-width: 600px) {
     width: 300px;

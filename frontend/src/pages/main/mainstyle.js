@@ -202,3 +202,22 @@ export const Logo = styled.img`
     width: 300px;
   }
 `;
+
+export const MemoItem = styled.div`
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid #a9a9a9;
+
+`;
+
+export const MemoDeleteButton = styled.button`
+  background: transparent;
+  color: red;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+`;

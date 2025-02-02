@@ -23,9 +23,9 @@ const WeeklyPlanner = () => {
             .then((res) => res.json())
             .then((data) => {
                 const groupedSchedules = {};
-                data.forEach(({ date, task, category, time }) => {
+                data.forEach(({ id, date, task, category, time }) => { // id 포함
                     if (!groupedSchedules[date]) groupedSchedules[date] = [];
-                    groupedSchedules[date].push({ task, category, time });
+                    groupedSchedules[date].push({ id, task, category, time }); // id 저장
                 });
                 for (let date in groupedSchedules) {
                     groupedSchedules[date].sort((a, b) => a.time.localeCompare(b.time));
@@ -54,6 +54,24 @@ const WeeklyPlanner = () => {
         setSelectedCategory("기타");
         setShowForm(false);
     };
+
+    const deleteTask = async (date, index, id) => {
+        if (!id) {
+            console.error("삭제할 일정의 ID가 없습니다.");
+            return;
+        }
+
+        await fetch(`https://kyotosaka.up.railway.app/api/schedules/${id}`, {
+            method: "DELETE",
+        });
+
+        setSchedules((prevSchedules) => {
+            const updatedSchedules = { ...prevSchedules };
+            updatedSchedules[date] = updatedSchedules[date].filter((_, i) => i !== index);
+            return updatedSchedules;
+        });
+    };
+
 
     const addMemo = async () => {
         if (newMemo.trim() === "") return;
@@ -92,7 +110,7 @@ const WeeklyPlanner = () => {
                                 <ScheduleItem key={index}>
                                     {item.time} <br/>
                                     {item.task}
-                                    <DeleteButton>X</DeleteButton>
+                                    <DeleteButton onClick={() => deleteTask(date, index, item.id)}>X</DeleteButton>
                                 </ScheduleItem>
                             ))}
                         </ScheduleColumn>

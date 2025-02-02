@@ -19,7 +19,7 @@ const WeeklyPlanner = () => {
     const categories = ["항공", "관광", "아침", "점심", "저녁", "간식", "기타", "숙소"];
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/schedules")
+        fetch("https://kyotosaka.up.railway.app/api/schedules")
             .then((res) => res.json())
             .then((data) => {
                 const groupedSchedules = {};
@@ -33,14 +33,14 @@ const WeeklyPlanner = () => {
                 setSchedules(groupedSchedules);
             });
 
-        fetch("http://localhost:8080/api/memo")
+        fetch("https://kyotosaka.up.railway.app/api/memo")
             .then((res) => res.json())
             .then((data) =>  setMemos(data));
     }, []);
 
     const addTask = async () => {
         if (newTask.trim() === "") return;
-        await fetch("http://localhost:8080/api/schedules", {
+        await fetch("https://kyotosaka.up.railway.app/api/schedules", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ date: selectedDate, task: newTask, category: selectedCategory, time })
@@ -57,7 +57,7 @@ const WeeklyPlanner = () => {
 
     const addMemo = async () => {
         if (newMemo.trim() === "") return;
-        await fetch("http://localhost:8080/api/memo", {
+        await fetch("https://kyotosaka.up.railway.app/api/memo", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ memo: newMemo })

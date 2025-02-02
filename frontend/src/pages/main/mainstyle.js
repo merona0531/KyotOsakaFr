@@ -63,8 +63,8 @@ export const ScheduleItem = styled.div`
   font-size: 14px;
   position: relative;
   @media (max-width: 600px) {
-    text-align: center;
     font-size: 12px;
+    padding: 6px;
   }
 `;
 
@@ -78,6 +78,9 @@ export const DeleteButton = styled.button`
   padding: 2px 5px;
   cursor: pointer;
   font-size: 12px;
+  @media (max-width: 600px) {
+    padding: 1px;
+  }
 `;
 
 export const Input = styled.input`
@@ -114,6 +117,10 @@ export const FlightInfoContainer = styled.div`
   border-radius: 10px;
   margin-bottom: 10px;
   text-align: center;
+
+  @media (max-width: 600px) {
+    padding: 5px 7px;
+  }
 `;
 
 export const FlightInfo = styled.div`
@@ -122,6 +129,10 @@ export const FlightInfo = styled.div`
   strong {
     font-size: 18px;
     color: #000;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 14px;
   }
 `;
 
@@ -134,7 +145,7 @@ export const MemoContainer = styled.div`
 
 export const MemoInput = styled.textarea`
   width: 90%;
-  height: 80px;
+  height: 30px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -159,6 +170,6 @@ export const Logo = styled.img`
   margin-top: 20px;
 
   @media (max-width: 600px) {
-    width: 200px;
+    width: 300px;
   }
 `;

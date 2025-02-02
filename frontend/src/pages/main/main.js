@@ -91,7 +91,7 @@ const WeeklyPlanner = () => {
             return;
         }
 
-        await fetch('https://kyotosaka.up.railway.app/api/schedules/${id}', {
+        await fetch(`https://kyotosaka.up.railway.app/api/schedules/${id}`, {
         method: "DELETE",
     });
 
@@ -104,7 +104,7 @@ const WeeklyPlanner = () => {
 
 const addMemo = async () => {
     if (newMemo.trim() === "") return;
-    await fetch("https://kyotosaka.up.railway.app/api/memo", {
+    await fetch(`https://kyotosaka.up.railway.app/api/memo`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ memo: newMemo })
@@ -114,7 +114,7 @@ const addMemo = async () => {
 };
 
 const deleteMemo = async (id) => {
-    await fetch("https://kyotosaka.up.railway.app/api/memo/${id}", {
+    await fetch(`https://kyotosaka.up.railway.app/api/memo/${id}`, {
     method: "DELETE",
 });
 

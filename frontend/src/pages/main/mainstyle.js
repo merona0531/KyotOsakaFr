@@ -44,12 +44,13 @@ export const ScheduleList = styled.div`
 
 export const ScheduleColumn = styled.div`
   width: 18%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  
 
   @media (max-width: 600px) {
     width: 14%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -61,7 +62,10 @@ export const ScheduleItem = styled.div`
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
   font-size: 14px;
   position: relative;
-  text-align: center;
+  @media (max-width: 600px) {
+    text-align: center;
+    font-size: 12px;
+  }
 `;
 
 export const DeleteButton = styled.button`
@@ -155,6 +159,6 @@ export const Logo = styled.img`
   margin-top: 20px;
 
   @media (max-width: 600px) {
-    width: 350px;
+    width: 200px;
   }
 `;

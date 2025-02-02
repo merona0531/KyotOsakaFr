@@ -47,10 +47,8 @@ export const ScheduleColumn = styled.div`
   
 
   @media (max-width: 600px) {
-    width: 14%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 18%;
+    
   }
 `;
 
@@ -89,25 +87,45 @@ export const Input = styled.input`
   margin-top: 10px;
 
   @media (max-width: 600px) {
-    width: 100%;
+    width: 70%;
   }
 `;
-
-export const AddButton = styled.button`
-  margin-top: 5px;
+export const Select=styled.select`
   padding: 5px;
+  margin-top: 10px;
+  @media (max-width: 600px) {
+    width: 20%;
+  }
+`
+export const AddButton = styled.button`
+  margin-top: 10px;
+  padding: 8px 12px;
   background: #4caf50;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 `;
+export const BtnWrapper=styled.div`
+  @media (max-width: 600px) {
+    display: flex;
+    justify-content: space-between;
+  }
+`
+
+export const BtnWrapper2=styled.div`
+  @media (max-width: 600px) {
+    display: flex;
+    justify-content: space-between;
+  }
+`
 
 export const CategorySelect = styled.select`
   margin-top: 10px;
   padding: 5px;
 
   @media (max-width: 600px) {
-    width: 100%;
+    width: 20%;
   }
 `;
 
@@ -126,6 +144,8 @@ export const FlightInfoContainer = styled.div`
 export const FlightInfo = styled.div`
   font-size: 16px;
   color: #333;
+  font-family: monospace;
+  font-weight: bold;
   strong {
     font-size: 18px;
     color: #000;
@@ -138,31 +158,34 @@ export const FlightInfo = styled.div`
 
 export const MemoContainer = styled.div`
   background: #fff3cd;
-  padding: 15px;
   border-radius: 10px;
-  margin-top: 15px;
+  width: 500px;
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 600px) {
+    width: 90%;
+    padding: 15px;
+  }
 `;
 
 export const MemoInput = styled.textarea`
-  width: 90%;
-  height: 30px;
-  padding: 10px;
+  width: 80%;
+  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
   resize: none;
 `;
 
 export const SaveMemoButton = styled.button`
-  margin-top: 10px;
-  padding: 8px 12px;
+  padding: 10px 12px;
   background: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  &:hover {
-    background: #0056b3;
-  }
 `;
 
 export const Logo = styled.img`

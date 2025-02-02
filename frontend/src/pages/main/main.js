@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {
     CategorySelect, AddButton, DeleteButton, Input,
     ScheduleItem, DateRow, ScheduleList, ScheduleColumn, PlannerWrapper,
-    FlightInfoContainer, FlightInfo, MemoContainer, MemoInput, SaveMemoButton, Logo
+    FlightInfoContainer, FlightInfo, MemoContainer, MemoInput, SaveMemoButton, Logo, BtnWrapper, BtnWrapper2, Select
 } from './mainstyle';
 import Awsome from '../../img/AWSOMEPOSSOME.png'
 
@@ -74,8 +74,8 @@ const WeeklyPlanner = () => {
             <PlannerWrapper>
                 <FlightInfoContainer>
                     <FlightInfo>
-                        <div>✈️ TW221 | 김해국제공항 → 간사이국제공항 | 09:25 - 10:55</div>
-                        <div>✈️ TW222 | 간사이국제공항 → 김해국제공항 | 18:40 - 20:15</div>
+                        <div>✈️ TW221 | PUS → KIX | 09:25 - 10:55</div>
+                        <div>✈️ TW222 | KIX → PUS | 18:40 - 20:15</div>
                     </FlightInfo>
                 </FlightInfoContainer>
             </PlannerWrapper>
@@ -101,41 +101,48 @@ const WeeklyPlanner = () => {
                 <AddButton onClick={() => setShowForm(!showForm)}>일정 추가</AddButton>
                 {showForm && (
                     <div>
-                        <Input
-                            type="text"
-                            value={newTask}
-                            onChange={(e) => setNewTask(e.target.value)}
-                            placeholder="일정 제목 입력..."
-                        />
-                        <CategorySelect onChange={(e) => setSelectedCategory(e.target.value)}>
-                            {categories.map((category) => (
-                                <option key={category} value={category}>{category}</option>
-                            ))}
-                        </CategorySelect>
-                        <Input
-                            type="time"
-                            value={time}
-                            onChange={(e) => setTime(e.target.value)}
-                        />
-                        <select onChange={(e) => setSelectedDate(e.target.value)}>
-                            {dates.map((date) => (
-                                <option key={date} value={date}>{date}</option>
-                            ))}
-                        </select>
+                        <BtnWrapper>
+                            <Input
+                                type="text"
+                                value={newTask}
+                                onChange={(e) => setNewTask(e.target.value)}
+                                placeholder="일정 제목 입력..."
+                            />
+                            <CategorySelect onChange={(e) => setSelectedCategory(e.target.value)}>
+                                {categories.map((category) => (
+                                    <option key={category} value={category}>{category}</option>
+                                ))}
+                            </CategorySelect>
+                        </BtnWrapper>
+                        <BtnWrapper2>
+                            <Select onChange={(e) => setSelectedDate(e.target.value)}>
+                                {dates.map((date) => (
+                                    <option key={date} value={date}>{date}일</option>
+                                ))}
+                            </Select>
+                            <Input
+                                type="time"
+                                value={time}
+                                onChange={(e) => setTime(e.target.value)}
+                            />
+                        </BtnWrapper2>
                         <AddButton onClick={addTask}>추가</AddButton>
                     </div>
                 )}
-                <MemoContainer>
-                    <h3>📌 메모</h3>
-                    <ul>
-                        {memos.map((memo, index) => (
-                            <li key={index}>{memo.memo}</li>
-                        ))}
-                    </ul>
-                    <MemoInput value={newMemo} onChange={(e) => setNewMemo(e.target.value)} />
-                    <SaveMemoButton onClick={addMemo}>추가하기</SaveMemoButton>
-                </MemoContainer>
+
             </PlannerWrapper>
+            <MemoContainer>
+                <h3>📌 메모</h3>
+                <ul>
+                    {memos.map((memo, index) => (
+                        <li key={index}>{memo.memo}</li>
+                    ))}
+                </ul>
+                <div style={{width:'100%',display:"flex", alignItems:'center', justifyContent:'space-between'}}>
+                    <MemoInput value={newMemo} onChange={(e) => setNewMemo(e.target.value)} />
+                    <SaveMemoButton onClick={addMemo}>추가</SaveMemoButton>
+                </div>
+            </MemoContainer>
         </>
     );
 };

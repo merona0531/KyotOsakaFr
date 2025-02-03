@@ -60,6 +60,10 @@ export const ScheduleItem = styled.div`
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
   font-size: 14px;
   position: relative;
+  div{
+    margin-top: 3px;
+    font-weight: 600;
+  }
   @media (max-width: 600px) {
     font-size: 12px;
     padding: 6px;
@@ -73,11 +77,11 @@ export const DeleteButton = styled.button`
   background-color: transparent;
   color: red;
   border: none;
-  padding: 2px 5px;
+  padding: 1px 1px;
   cursor: pointer;
   font-size: 12px;
   @media (max-width: 600px) {
-    padding: 1px;
+    padding: 0;
   }
 `;
 
@@ -206,6 +210,7 @@ export const Logo = styled.img`
 export const MemoItem = styled.div`
   display: flex;
   width: 85%;
+  font-size: 14px;
   justify-content: space-between;
   align-items: center;
   padding: 5px;
@@ -220,4 +225,69 @@ export const MemoDeleteButton = styled.button`
   border: none;
   cursor: pointer;
   font-size: 12px;
+`;
+
+export const ModalWrapper = styled.div`
+  width: 500px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @media (max-width: 600px) {
+    width: 90%;
+    padding: 15px;
+  }
+`;
+
+export const ModalHeader = styled.h2`
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+`;
+
+export const ModalLabel = styled.label`
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #555;
+`;
+
+export const ModalInput = styled(Input)`
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+`;
+
+export const ModalSelect = styled(Select)`
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+`;
+
+export const ModalButtonWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+`;
+
+export const ModalButton = styled(AddButton)`
+  flex: 1;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: #0056b3;
+  }
 `;

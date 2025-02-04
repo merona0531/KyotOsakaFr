@@ -60,10 +60,21 @@ export const ScheduleItem = styled.div`
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
   font-size: 14px;
   position: relative;
-  div{
+
+  div {
     margin-top: 3px;
     font-weight: 600;
   }
+
+  span {
+    font-size: 12px;
+    color: #505050;
+    @media (max-width: 600px) {
+      font-size: 10px;
+
+    }
+  }
+
   @media (max-width: 600px) {
     font-size: 12px;
     padding: 6px;
@@ -75,7 +86,7 @@ export const DeleteButton = styled.button`
   top: 5px;
   right: 5px;
   background-color: transparent;
-  color: red;
+  color: rgba(255, 0, 0, 0.6);
   border: none;
   padding: 1px 1px;
   cursor: pointer;
@@ -131,6 +142,9 @@ export const CategorySelect = styled.select`
   margin-top: 10px;
   padding: 5px;
   font-size: 15px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
   
 `;
 
@@ -203,6 +217,15 @@ export const Logo = styled.img`
   }
 `;
 
+export const Logo2 = styled.img`
+  width: 350px;
+
+
+  @media (max-width: 600px) {
+    width: 300px;
+  }
+`;
+
 export const MemoItem = styled.div`
   display: flex;
   width: 85%;
@@ -217,7 +240,7 @@ export const MemoItem = styled.div`
 
 export const MemoDeleteButton = styled.button`
   background: transparent;
-  color: red;
+  color: rgba(255, 0, 0, 0.6);
   border: none;
   cursor: pointer;
   font-size: 12px;
@@ -232,24 +255,22 @@ export const ModalWrapper = styled.div`
   gap: 10px;
 `;
 
-export const ModalHeader = styled.h2`
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-`;
-
 export const ModalLabel = styled.label`
   font-size: 1rem;
   margin-bottom: 8px;
   color: #555;
+  
+  
 `;
 
 export const ModalInput = styled(Input)`
   width: 80%;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
   margin-bottom: 15px;
   font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
 `;
 
 export const ModalSelect = styled(Select)`
@@ -257,6 +278,9 @@ export const ModalSelect = styled(Select)`
   padding: 5px;
   font-size: 15px;
   width: 80%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
 `;
 
 export const ModalButtonWrapper = styled.div`
@@ -268,17 +292,25 @@ export const ModalButtonWrapper = styled.div`
 export const ModalButton = styled(AddButton)`
   flex: 1;
   padding: 10px;
-  background-color: #764159;
-  color: white;
+  background-color: #ffc9e1;
+  color: #764159;
   border: none;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: background-color 0.3s;
+
   &:hover {
     background-color: #764159;
   }
 `;
+export const HImg=styled.img`
+  width: 25px;
+  margin-left: 10px;
+`
 
 export const ModalButton2 = styled(AddButton)`
   flex: 1;

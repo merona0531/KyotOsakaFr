@@ -23,19 +23,19 @@ import {
     MemoItem,
     ModalButtonWrapper,
     ModalWrapper,
-    ModalHeader,
-    ModalLabel, ModalInput, ModalSelect, ModalButton, ModalButton2
+    ModalLabel, ModalInput, ModalSelect, ModalButton, ModalButton2, Logo2, HImg
 } from './mainstyle';
 import Awsome from '../../img/awesomepawsome.png';
+import Heart from '../../img/heart.png';
 
 const pastelColors = {
     "항공": "#d6f8ff",
     "이동": "#ffe9f6",
     "관광": "#f1d5ff",
-    "아침": "#ffedbd",
+    "아침": "#ffe1c9",
     "점심": "rgba(160,204,255,0.66)",
     "저녁": "#ffccee",
-    "간식": "#e2ffe4",
+    "간식": "#ffffcc",
     "기타": "#ffffff",
     "숙소": "#ceffe5"
 };
@@ -226,6 +226,7 @@ const WeeklyPlanner = () => {
                                     onClick={() => handleEditSchedule(item)}
                                 >
                                     {item.time} <br />
+                                    <span>{item.category}</span>
                                     <div>{item.task}</div>
                                     <DeleteButton onClick={(e) => {
                                         e.stopPropagation();  // 클릭 이벤트 전파 방지
@@ -300,7 +301,9 @@ const WeeklyPlanner = () => {
                 }}
             >
                 <ModalWrapper>
-                    <ModalHeader>일정 수정</ModalHeader>
+                    <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                        <Logo2 src={Awsome}></Logo2>
+                    </div>
                     <div>
                         <ModalLabel>일정 제목:</ModalLabel>
                         <br/>
@@ -351,7 +354,10 @@ const WeeklyPlanner = () => {
                     </div>
                     <ModalButtonWrapper>
                         <ModalButton2 onClick={() => setShowModal(false)}>취소</ModalButton2>
-                        <ModalButton onClick={handleUpdateSchedule}>수정 완료</ModalButton>
+                        <ModalButton onClick={handleUpdateSchedule}>
+                            완료
+                            <HImg src={Heart}/>
+                        </ModalButton>
                     </ModalButtonWrapper>
                 </ModalWrapper>
 

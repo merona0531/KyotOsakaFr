@@ -144,7 +144,7 @@ export const CategorySelect = styled.select`
   font-size: 15px;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #555;
   
 `;
 
@@ -269,8 +269,7 @@ export const ModalInput = styled(Input)`
   margin-bottom: 15px;
   font-size: 1rem;
   background-color: transparent;
-  border: none;
-  border-bottom: 1px solid black;
+  border: 1px solid #555;
 `;
 
 export const ModalSelect = styled(Select)`
@@ -280,7 +279,7 @@ export const ModalSelect = styled(Select)`
   width: 80%;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #555;
 `;
 
 export const ModalButtonWrapper = styled.div`

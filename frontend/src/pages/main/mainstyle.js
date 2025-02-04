@@ -131,11 +131,7 @@ export const CategorySelect = styled.select`
   margin-top: 10px;
   padding: 5px;
   font-size: 15px;
-
-
-  @media (max-width: 600px) {
-    width: 20%;
-  }
+  
 `;
 
 export const FlightInfoContainer = styled.div`
@@ -228,18 +224,12 @@ export const MemoDeleteButton = styled.button`
 `;
 
 export const ModalWrapper = styled.div`
-  width: 500px;
-  padding: 20px;
-  background-color: #fff;
+  width: 100%;
+  z-index: 3;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  @media (max-width: 600px) {
-    width: 90%;
-    padding: 15px;
-  }
+  gap: 10px;
 `;
 
 export const ModalHeader = styled.h2`
@@ -254,7 +244,7 @@ export const ModalLabel = styled.label`
 `;
 
 export const ModalInput = styled(Input)`
-  width: 100%;
+  width: 80%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -263,12 +253,10 @@ export const ModalInput = styled(Input)`
 `;
 
 export const ModalSelect = styled(Select)`
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 15px;
-  font-size: 1rem;
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 15px;
+  width: 80%;
 `;
 
 export const ModalButtonWrapper = styled.div`
@@ -280,7 +268,7 @@ export const ModalButtonWrapper = styled.div`
 export const ModalButton = styled(AddButton)`
   flex: 1;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #764159;
   color: white;
   border: none;
   font-size: 1rem;
@@ -288,6 +276,19 @@ export const ModalButton = styled(AddButton)`
   border-radius: 4px;
   transition: background-color 0.3s;
   &:hover {
-    background-color: #0056b3;
+    background-color: #764159;
   }
+`;
+
+export const ModalButton2 = styled(AddButton)`
+  flex: 1;
+  background-color: #ffe9f2;
+  padding: 10px;
+  color: #764159;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  
 `;
